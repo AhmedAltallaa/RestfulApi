@@ -18,6 +18,7 @@ Route::group([
 ], function () {
     Route::post('login', 'Api\AuthController@login');
     Route::post('signup', 'Api\AuthController@signup');
+    Route::get('signup/activate/{token}', 'Api\AuthController@signupActivate');
   
     Route::group([
       'middleware' => 'auth:api'
